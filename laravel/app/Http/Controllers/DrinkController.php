@@ -17,4 +17,14 @@ class DrinkController extends Controller
     $drink = Drink::findOrFail($id);    //cerco l'elemento con questo specifico id, se non trovato da errore
     return view('pages.drink-show', compact('drink'));
   }
+
+  public function create()
+  {
+    return view('pages.drink-create');
+  }
+  public function store(Request $request)
+  {
+    $newDrink=Drink::create($request -> all());
+    return redirect() -> route('drink-show', $newDrink -> id); 
+  }
 }
