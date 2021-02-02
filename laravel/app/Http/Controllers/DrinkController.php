@@ -9,7 +9,7 @@ class DrinkController extends Controller
 {
   public function index()
   {
-    $drinks = Drink::all();    //assegno alla variabile $peripherals tutta la tabella (posso anche scrivere: $peripherals = App\Peripheral::all(); togliendo use App\Peripheral; )
+    $drinks = Drink::all();    //assegno alla variabile $drinks tutta la tabella (posso anche scrivere: $drinks = App\Drink::all(); togliendo use App\Drink; )
     return view('pages.drinks-index', compact('drinks'));
   }
   public function show($id)
@@ -18,28 +18,28 @@ class DrinkController extends Controller
     return view('pages.drink-show', compact('drink'));
   }
 
-  public function create()
+  public function create()      //visualizzo la pagina per creare un nuovo elemento
   {
     return view('pages.drink-create');
   }
-  public function store(Request $request)
+  public function store(Request $request)       //salvo l'elemento creato
   {
     $newDrink=Drink::create($request -> all());
     return redirect() -> route('drink-show', $newDrink -> id);
   }
 
-  public function edit($id)
+  public function edit($id)      //visualizzola pagina per modificare l'elemento selezionato
   {
     $drink=Drink::findOrFail($id);
     return view('pages.drink-edit', compact('drink'));
   }
-  public function update(Request $request, $id)
+  public function update(Request $request, $id)    //aggiorno l'elemento modificato
   {
     $drink=Drink::findOrFail($id);
     $drink->update($request -> all());
     return redirect() -> route('drink-show', $drink -> id);
   }
-  public function delete($id) {
+  public function delete($id) {           //elimino l'elemento selezionato
     $drink = Drink::findOrFail($id);
     $drink -> delete();
     return redirect() -> route('drinks-index');
