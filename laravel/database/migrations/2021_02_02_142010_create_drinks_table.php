@@ -18,7 +18,7 @@ class CreateDrinksTable extends Migration
 
             $table->string('name')->unique();
             $table->integer('gradation');
-            $table->double('price');
+            $table->integer('price');
 
             $table->timestamps();
         });
