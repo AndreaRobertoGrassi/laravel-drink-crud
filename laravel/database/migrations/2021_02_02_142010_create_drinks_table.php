@@ -20,6 +20,9 @@ class CreateDrinksTable extends Migration
             $table->integer('gradation');
             $table->integer('price');
 
+            $table->bigInteger('bottle_id') -> unsigned();     //chiave esterna della tabella bottle
+
+
             $table->timestamps();
         });
     }

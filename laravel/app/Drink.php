@@ -12,6 +12,10 @@ class Drink extends Model
     'price'
   ];
 
+  public function bottle(){       //relazione many to one
+    return $this->belongsTo(Bottle::class);
+  }
+
   // public function drink(){                        //esempio di relazione one to one
   //   return $this->hasOne('App\Drink');
   // }

@@ -10,4 +10,8 @@ class Bottle extends Model
         'name',
         'price'
     ];
+
+    public function drinks(){      //relazione one to many
+        return $this-> hasMany(Drink::class);      //dentro le parentesi acrei potuto mettere App\Drink
+    }
 }

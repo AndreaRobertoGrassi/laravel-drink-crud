@@ -12,6 +12,6 @@ class BottleSeeder extends Seeder
      */
     public function run()
     {
-        factory(Bottle::class, 50)->create();
+        factory(Bottle::class, 10)->create();
     }
 }

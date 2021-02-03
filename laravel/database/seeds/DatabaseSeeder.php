@@ -11,9 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      $this->call([
+      $this->call([           //va prima chi non ha la chiave esterna
+
+        BottleSeeder::class,
         DrinkSeeder::class,
-        BottleSeeder::class
+        
       ]);
     }
 }
