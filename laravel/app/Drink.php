@@ -11,4 +11,9 @@ class Drink extends Model
     'gradation',
     'price'
   ];
+
+  // public function drink(){                        //esempio di relazione one to one
+  //   return $this->hasOne('App\Drink');
+  // }
+
 }
