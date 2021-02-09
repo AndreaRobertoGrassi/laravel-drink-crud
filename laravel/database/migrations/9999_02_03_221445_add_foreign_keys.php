@@ -23,7 +23,7 @@ class AddForeignKeys extends Migration
      *
      * @return void
      */
-    public function down()     // elimina la relazione tra le tabelle
+    public function down()     // elimina la relazione tra le tabelle   //se ho più di una relazione dove partire dall'ultima
     {
 
         Schema::table('drinks', function (Blueprint $table) {

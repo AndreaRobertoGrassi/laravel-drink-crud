@@ -12,3 +12,7 @@ Route::post('/store', 'DrinkController@store') ->name('drink-store');
 Route::get('/edit{id}', 'DrinkController@edit') -> name('drink-edit');
 Route::post('/update{id}', 'DrinkController@update') -> name('drink-update');
 Route::get('/delete{id}', 'DrinkController@delete') -> name('drink-delete');
+
+
+// potrei scrivere anche:
+// Route::resource('drinks', 'DrinkController');          per avere tutte le rotte per l'entità drinks

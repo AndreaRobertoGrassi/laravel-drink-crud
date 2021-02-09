@@ -20,7 +20,7 @@ class DrinkController extends Controller {
       return view('pages.drink-create');
    }
 
-   public function store(Request $request) {      //salvo l'elemento creato
+   public function store(Request $request) {      //vengono passe le coppie name-value inviate dal from tramite la classe Request $request
       $request = $this -> getRequestFact($request);     //richiamo la funzione    (il $this si riferisce al DrinkController)
 
       $drink=Drink::create($request -> all());
@@ -40,7 +40,7 @@ class DrinkController extends Controller {
       return redirect() -> route('drink-show', $drink -> id);
    }
 
-   public function delete($id) {           //elimino l'elemento selezionato
+   public function delete($id) {           //elimino l'elemento selezionato       (tra parentesi posso anche fare Drink $drink e in questo caso non faccio: $drink = Drink::findOrFail($id);)
       $drink = Drink::findOrFail($id); 
       $drink -> delete();
       return redirect() -> route('drinks-index'); 
